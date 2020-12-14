@@ -4,6 +4,9 @@ import java.io.BufferedReader;
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.List;
+import java.util.Map;
+import java.util.SortedMap;
+import java.util.TreeMap;
 import java.util.Enumeration;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -17,10 +20,10 @@ public class AnalyticsCounter {
 		String line = reader.readLine();
 
 		List<String> symptoms = new ArrayList<String>();
-		Hashtable<String,Integer> symptomsMap = new Hashtable<String,Integer>();
+		SortedMap<String,Integer> symptomsMap = new TreeMap<String,Integer>();
 
 		String key;
-
+		
 		while (line != null) {
 
 			symptoms.add(line);
@@ -40,14 +43,12 @@ public class AnalyticsCounter {
 	    }
 
 	    
-		Enumeration<String> symptomsName = symptomsMap.keys();
 		
-	    while(symptomsName.hasMoreElements()) {
-	    	key = (String)symptomsName.nextElement();
-	    	System.out.println(key+" : "+symptomsMap.get(key));
-
-	  	}
-
+		
+	   for(Map.Entry<String,Integer> symptom:symptomsMap.entrySet()) {
+		   System.out.println(symptom.getKey()+" - "+symptom.getValue());
+	   }
+	    
 	    
 
 	    
