@@ -31,22 +31,21 @@ public class AnalyticsCounter {
 			line = reader.readLine();	// get another symptom
 		}
 		
+		
+		//// group the for iteration in one
 		for(String symptom:symptoms) {
 			
-			System.out.println(symptom);
-			symptomsMap.put(symptom,0);
-		}
-	
+			if(symptomsMap.get(symptom) == null) 
+				symptomsMap.put(symptom,1);
+			
+			else 
+				symptomsMap.put(symptom,symptomsMap.get(symptom)+1);
+			}
 
-	    for(String symptom:symptoms) {
-	    	symptomsMap.put(symptom,symptomsMap.get(symptom)+1);
-	    }
-
-	    
-		
-		
+	    //////
+	    		
 	   for(Map.Entry<String,Integer> symptom:symptomsMap.entrySet()) {
-		   System.out.println(symptom.getKey()+" - "+symptom.getValue());
+		   System.out.println(symptom.getKey()+": "+symptom.getValue());
 	   }
 	    
 	    
