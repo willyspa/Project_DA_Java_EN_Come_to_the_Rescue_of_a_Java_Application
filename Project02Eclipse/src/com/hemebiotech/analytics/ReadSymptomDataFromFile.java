@@ -3,28 +3,26 @@ package com.hemebiotech.analytics;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.Reader;
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class ReadSymptomDataFromFile  {
 	
-	private String line="";
+	BufferedReader reader;
+	List<String> symptoms = new ArrayList<String>();
 	
-	public String read (String filepath) {
+	public  List<String> readAndList (String filepath) throws IOException {
+
+		reader = new BufferedReader (new FileReader(filepath));
+		String line = reader.readLine();
 		
-		if(filepath != null) {
-			try {
-				BufferedReader reader = new BufferedReader (new FileReader(filepath));
-				this.line = reader.readLine();								
-				} catch (IOException e) {		
-					e.printStackTrace();					
-				}			
+		while (line != null) {
+			symptoms.add(line);
+			line = reader.readLine();	// get another symptom
 		}
-		else {
-			System.out.println("filpath est 'null'");
-		}
-		return this.line;				
+		return symptoms;				
 			
 	}
 

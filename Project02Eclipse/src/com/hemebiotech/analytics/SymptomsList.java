@@ -5,11 +5,17 @@ import java.util.List;
 
 public class SymptomsList implements ISymptomReader{
 	
-	private List<String> symptoms = new ArrayList<String>();
+	private List<String> symptoms;
+	
+	public SymptomsList() {
+		
+		symptoms = new ArrayList<String>();
+		
+	}
 
 	public List<String> getSymptoms(String line) {
 		
-		while (line != null) {
+		while (line != null && line !="") {
 
 			symptoms.add(line);
 

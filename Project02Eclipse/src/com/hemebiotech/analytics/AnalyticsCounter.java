@@ -1,31 +1,60 @@
 package com.hemebiotech.analytics;
 
-import java.io.BufferedReader;
-import java.util.ArrayList;
-import java.util.Hashtable;
-import java.util.List;
-import java.util.Map;
-import java.util.SortedMap;
-import java.util.TreeMap;
-import java.util.Enumeration;
-import java.io.FileReader;
-import java.io.FileWriter;
+import java.util.Scanner;
 
 public class AnalyticsCounter {
 
 	
 	public static void main(String args[]) throws Exception {
 		
+		SymptomsClassification symptomsReader = new SymptomsClassification();
+		Scanner sc = new Scanner(System.in);
+		char response =' ';
+		
+		do {
+			
+				System.out.println("********************************************");	
+				System.out.println("Give the path of the symptoms file");
+				System.out.println("********************************************");
+				String userPath = sc.nextLine();
+				symptomsReader.sortAndCount(userPath);
+				symptomsReader.displaySymptoms();
+				
+				do{
+					
+					System.out.println("********************************************");
+					System.out.println("Read an other file ? (Y/N)");
+					System.out.println("********************************************");
+					response = sc.nextLine().charAt(0);
+					
+				}while(response !='Y' && response != 'N');
+				
+		symptomsReader = new SymptomsClassification();
+		}while(response=='Y');
+		sc.close();
 		
 		String path = "C:\\Users\\armed\\git\\Project_DA_Java_EN_Come_to_the_Rescue_of_a_Java_Application\\Project02Eclipse\\src\\com\\hemebiotech\\analytics\\symptoms.txt";
+		String path2 = "C:\\Users\\armed\\git\\Project_DA_Java_EN_Come_to_the_Rescue_of_a_Java_Application\\Project02Eclipse\\src\\com\\hemebiotech\\analytics\\symptoms2.txt";
+		String path3 = "C:\\Users\\armed\\git\\Project_DA_Java_EN_Come_to_the_Rescue_of_a_Java_Application\\Project02Eclipse\\src\\com\\hemebiotech\\analytics\\symptoms3.txt";
+				
+		SymptomsClassification symptomsReader2 = new SymptomsClassification();
+		SymptomsClassification symptomsReader3 = new SymptomsClassification();
+
 		
-		ReadSymptomDataFromFile readSymptoms = new ReadSymptomDataFromFile();		
-		String line = readSymptoms.read(path);
 		
-		SymptomsList symptomsList = new SymptomsList();
-		List<String> symptoms = symptomsList.getSymptoms(line);
+		symptomsReader.displaySymptoms();
 		
+		System.out.println("********************************************");
+				
+		symptomsReader2.sortAndCount(path2);
+		symptomsReader2.displaySymptoms();
 		
+		System.out.println("********************************************");
+		
+		symptomsReader3.sortAndCount(path3);
+		symptomsReader3.displaySymptoms();
+		
+
 		
 		
 		
@@ -35,7 +64,7 @@ public class AnalyticsCounter {
 /*
 		BufferedReader reader = new BufferedReader (new FileReader("C:\\Users\\armed\\git\\Project_DA_Java_EN_Come_to_the_Rescue_of_a_Java_Application\\Project02Eclipse\\src\\com\\hemebiotech\\analytics\\symptoms.txt"));
 		String line = reader.readLine();
-///////////////////////////
+
 		List<String> symptoms = new ArrayList<String>();
 		SortedMap<String,Integer> symptomsMap = new TreeMap<String,Integer>();
 
