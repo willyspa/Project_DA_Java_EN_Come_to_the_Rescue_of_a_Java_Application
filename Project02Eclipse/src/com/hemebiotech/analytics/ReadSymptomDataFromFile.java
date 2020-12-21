@@ -11,7 +11,7 @@ import java.util.List;
 public class ReadSymptomDataFromFile  {
 	
 	BufferedReader reader;
-	List<String> symptoms = new ArrayList<String>();
+	private List<String> symptoms = new ArrayList<String>();
 	
 	public  List<String> readAndList (String filepath) throws IOException {
 
@@ -24,6 +24,10 @@ public class ReadSymptomDataFromFile  {
 		}
 		return symptoms;				
 			
+	}
+	
+	public List<String> getSymptoms() {
+		return this.symptoms;
 	}
 
 	

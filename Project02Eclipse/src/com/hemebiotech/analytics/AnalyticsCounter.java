@@ -7,7 +7,7 @@ public class AnalyticsCounter {
 	
 	public static void main(String args[]) throws Exception {
 		
-		SymptomsClassification symptomsReader = new SymptomsClassification();
+		SymptomsReader symptomsReader = new SymptomsReader();
 		Scanner sc = new Scanner(System.in);
 		char response =' ';
 		
@@ -16,32 +16,52 @@ public class AnalyticsCounter {
 				System.out.println("********************************************");	
 				System.out.println("Give the path of the symptoms file");
 				System.out.println("********************************************");
+				
 				String userPath = sc.nextLine();
 				symptomsReader.sortAndCount(userPath);
 				symptomsReader.displaySymptoms();
+				symptomsReader.createFile();
 				
 				do{
 					
 					System.out.println("********************************************");
-					System.out.println("Read an other file ? (Y/N)");
+					System.out.println("Read an other file ? (y/n)");
 					System.out.println("********************************************");
+					
 					response = sc.nextLine().charAt(0);
 					
-				}while(response !='Y' && response != 'N');
+				}while(Character.toLowerCase(response) !='y' && Character.toLowerCase(response) != 'n');
 				
-		symptomsReader = new SymptomsClassification();
+		symptomsReader = new SymptomsReader();
 		}while(response=='Y');
 		sc.close();
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		String path = "C:\\Users\\armed\\git\\Project_DA_Java_EN_Come_to_the_Rescue_of_a_Java_Application\\Project02Eclipse\\src\\com\\hemebiotech\\analytics\\symptoms.txt";
 		String path2 = "C:\\Users\\armed\\git\\Project_DA_Java_EN_Come_to_the_Rescue_of_a_Java_Application\\Project02Eclipse\\src\\com\\hemebiotech\\analytics\\symptoms2.txt";
 		String path3 = "C:\\Users\\armed\\git\\Project_DA_Java_EN_Come_to_the_Rescue_of_a_Java_Application\\Project02Eclipse\\src\\com\\hemebiotech\\analytics\\symptoms3.txt";
 				
-		SymptomsClassification symptomsReader2 = new SymptomsClassification();
-		SymptomsClassification symptomsReader3 = new SymptomsClassification();
+		SymptomsReader symptomsReader2 = new SymptomsReader();
+		SymptomsReader symptomsReader3 = new SymptomsReader();
 
 		
-		
+		symptomsReader.sortAndCount(path);
 		symptomsReader.displaySymptoms();
 		
 		System.out.println("********************************************");
