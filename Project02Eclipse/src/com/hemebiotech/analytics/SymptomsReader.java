@@ -11,26 +11,39 @@ import java.util.Properties;
 public class SymptomsReader extends SymptomsCounting{
 	
 	private ReadSymptomDataFromFile readSymptoms;
-	private List<String> symptoms;
 	
 	public SymptomsReader() {
 		
 		readSymptoms = new ReadSymptomDataFromFile();
-		symptoms = new ArrayList<String>();
 		
 	}
-			
+	
+	/**
+	 * 
+	 * @return a sorted list of symptoms with their count from data; 
+	 */
 	public void sortAndCount(String p) throws IOException {
 		
-		this.symptoms = readSymptoms.readAndList(p);
-		this.mapFromList(this.symptoms);
+		readSymptoms.readAndList(p);
+		this.mapFromList(readSymptoms.getSymptoms());
+
 		
 	}
 	
+	/**
+	 * 
+	 * @return Display the Symptoms with their count from a map
+	 */
 	public void displaySymptoms() {
+		System.out.println("************************");
+		System.out.println("The symptoms list");
+		System.out.println("************************");
 		this.displayCount();
 	}
-	
+	/**
+	 * 
+	 * @return create a file on the root folder with the symptoms data
+	 */
 	public void createFile() {
 		
 	    Properties prop = new Properties();

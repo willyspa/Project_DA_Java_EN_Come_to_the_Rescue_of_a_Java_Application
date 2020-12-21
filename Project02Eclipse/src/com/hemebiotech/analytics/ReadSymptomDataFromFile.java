@@ -8,13 +8,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class ReadSymptomDataFromFile  {
+public class ReadSymptomDataFromFile implements ISymptomReader {
 	
 	BufferedReader reader;
 	private List<String> symptoms = new ArrayList<String>();
 	
+	/**
+	 * If no data is available, return an empty List
+	 * 
+	 * @return a raw listing of all Symptoms obtained from a data source, duplicates are possible/probable
+	 */
+	
 	public  List<String> readAndList (String filepath) throws IOException {
-
+		
 		reader = new BufferedReader (new FileReader(filepath));
 		String line = reader.readLine();
 		
@@ -22,13 +28,15 @@ public class ReadSymptomDataFromFile  {
 			symptoms.add(line);
 			line = reader.readLine();	// get another symptom
 		}
-		return symptoms;				
+		return this.symptoms;				
 			
 	}
 	
 	public List<String> getSymptoms() {
 		return this.symptoms;
 	}
+
+
 
 	
 }

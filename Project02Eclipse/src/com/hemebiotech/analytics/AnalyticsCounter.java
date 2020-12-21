@@ -18,9 +18,15 @@ public class AnalyticsCounter {
 				System.out.println("********************************************");
 				
 				String userPath = sc.nextLine();
+				
 				symptomsReader.sortAndCount(userPath);
 				symptomsReader.displaySymptoms();
+				
 				symptomsReader.createFile();
+				System.out.println("////////////////////////////////////////////");	
+				System.out.println("Creation of the file");
+				System.out.println("////////////////////////////////////////////");
+				
 				
 				do{
 					
@@ -33,7 +39,9 @@ public class AnalyticsCounter {
 				}while(Character.toLowerCase(response) !='y' && Character.toLowerCase(response) != 'n');
 				
 		symptomsReader = new SymptomsReader();
-		}while(response=='Y');
+		
+		}while(response=='y');
+		
 		sc.close();
 		
 		
@@ -49,7 +57,7 @@ public class AnalyticsCounter {
 		
 		
 		
-		
+		/*		
 		
 		
 		
@@ -81,7 +89,7 @@ public class AnalyticsCounter {
 		
 		
 		// first get input
-/*
+
 		BufferedReader reader = new BufferedReader (new FileReader("C:\\Users\\armed\\git\\Project_DA_Java_EN_Come_to_the_Rescue_of_a_Java_Application\\Project02Eclipse\\src\\com\\hemebiotech\\analytics\\symptoms.txt"));
 		String line = reader.readLine();
 

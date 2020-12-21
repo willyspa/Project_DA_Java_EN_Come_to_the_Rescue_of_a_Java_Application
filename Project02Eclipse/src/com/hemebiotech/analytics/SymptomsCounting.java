@@ -14,7 +14,10 @@ public class SymptomsCounting {
 		symptomsMap = new TreeMap<String,Integer>();
 		
 	}
-	
+	/**
+	 * 
+	 * @return return a sorted list of symptoms with count from a list
+	 */
 	public SortedMap<String, Integer> mapFromList(List<String> symptoms) {
 				
 		if(symptoms.size() == 1 && symptoms.get(0).length() == 0) {
@@ -44,6 +47,10 @@ public class SymptomsCounting {
 		return this.symptomsMap;
 	}
 	
+	/**
+	 * 
+	 * @return Display the Symptoms with their count from a map
+	 */
 	public void displayCount() {
 		
 		   for(Map.Entry<String,Integer> symptom:this.symptomsMap.entrySet()) {
