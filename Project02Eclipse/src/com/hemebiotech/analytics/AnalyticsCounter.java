@@ -20,9 +20,9 @@ public class AnalyticsCounter {
 				String userPath = sc.nextLine();
 				
 				symptomsReader.sortAndCount(userPath);
-				symptomsReader.displaySymptoms();
-				
+				symptomsReader.displaySymptoms();				
 				symptomsReader.createFile();
+				
 				System.out.println("////////////////////////////////////////////");	
 				System.out.println("Creation of the file");
 				System.out.println("////////////////////////////////////////////");

@@ -51,7 +51,7 @@ public class SymptomsReader extends SymptomsCounting{
 
 	    try {
 
-	        output = new FileOutputStream("Symptoms Number2.txt");
+	        output = new FileOutputStream("---Symptoms---.txt");
 
 	       //set the properties value
 	       for(Map.Entry<String,Integer> symptom:this.symptomsMap.entrySet()) {
