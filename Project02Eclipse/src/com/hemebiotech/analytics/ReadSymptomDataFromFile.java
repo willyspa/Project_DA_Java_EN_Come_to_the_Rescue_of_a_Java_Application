@@ -17,8 +17,7 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 	 * If no data is available, return an empty List
 	 * 
 	 * @return a raw listing of all Symptoms obtained from a data source, duplicates are possible/probable
-	 */
-	
+	 */	
 	public  List<String> readAndList (String filepath) throws IOException {
 		
 		reader = new BufferedReader (new FileReader(filepath));
@@ -31,7 +30,9 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 		return this.symptoms;				
 			
 	}
-	
+	/**	 	 
+	 * @return a raw listing of all Symptoms 
+	 */
 	public List<String> getSymptoms() {
 		return this.symptoms;
 	}

@@ -3,7 +3,6 @@ package com.hemebiotech.analytics;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
-import java.util.TreeMap;
 
 public class SymptomsCounting {
 	
@@ -48,7 +47,7 @@ public class SymptomsCounting {
 	
 	/**
 	 * 
-	 * @return Display the Symptoms with their count from a map
+	 *  Display the Symptoms with their count from a map
 	 */
 	public void displayCount() {
 		
