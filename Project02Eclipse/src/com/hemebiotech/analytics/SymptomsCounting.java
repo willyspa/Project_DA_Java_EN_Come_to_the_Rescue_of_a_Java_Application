@@ -2,12 +2,12 @@ package com.hemebiotech.analytics;
 
 import java.util.List;
 import java.util.Map;
-import java.util.SortedMap;
+import java.util.TreeMap;
 import java.util.TreeMap;
 
 public class SymptomsCounting {
 	
-	protected SortedMap<String, Integer> symptomsMap;
+	protected TreeMap<String, Integer> symptomsMap;
 	
 	public SymptomsCounting(){
 		
@@ -18,7 +18,7 @@ public class SymptomsCounting {
 	 * 
 	 * @return return a sorted list of symptoms with count from a list
 	 */
-	public SortedMap<String, Integer> mapFromList(List<String> symptoms) {
+	public TreeMap<String, Integer> mapFromList(List<String> symptoms) {
 				
 		if(symptoms.size() == 1 && symptoms.get(0).length() == 0) {
 			
@@ -28,7 +28,6 @@ public class SymptomsCounting {
 		
 		for(String symptom:symptoms) {
 			
-
 			
 			if(symptomsMap.get(symptom) == null) { 
 				
@@ -42,7 +41,7 @@ public class SymptomsCounting {
 			
 	}
 	
-	public SortedMap<String,Integer> getSymptomsMap(){	
+	public TreeMap<String,Integer> getSymptomsMap(){	
 		
 		return this.symptomsMap;
 	}
