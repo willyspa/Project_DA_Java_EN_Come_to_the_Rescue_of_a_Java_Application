@@ -10,7 +10,7 @@ public class SingletonProperties {
 	    private static SingletonProperties single_instance = null;
 		private static final Properties prop = new Properties();
 		private static InputStream input = null;
-		private static String PropPath = "Project02Eclipse\\src\\src\\main\\resources\\application.properties";
+		private static String PropPath = "Project02Eclipse\\src\\main\\resources\\application.properties";
 
 	    private SingletonProperties(){ 
 
