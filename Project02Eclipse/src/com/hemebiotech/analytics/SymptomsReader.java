@@ -15,7 +15,9 @@ public class SymptomsReader extends SymptomsCounting{
 	}	
 	/**
 	 * 
-	 * a sorted list of symptoms with their count from data; 
+	 * take the path of the file as an entry then 
+	 * create a list of symptoms 
+	 * and finally sort and count the list within a Treemap; 
 	 */
 	public void sortAndCount(String p) throws IOException {
 		
@@ -24,7 +26,7 @@ public class SymptomsReader extends SymptomsCounting{
 	}	
 	/**
 	 * 
-	 *  Display the Symptoms with their count from a map
+	 *  Display on the console the Symptoms with their count from a map
 	 */
 	public void displaySymptoms() {
 		

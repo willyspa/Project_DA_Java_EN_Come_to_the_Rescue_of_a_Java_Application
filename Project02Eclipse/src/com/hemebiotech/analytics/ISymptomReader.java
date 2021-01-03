@@ -1,5 +1,6 @@
 package com.hemebiotech.analytics;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -11,6 +12,7 @@ import java.util.List;
  * 
  */
 public interface ISymptomReader {
+	public List<String> symptoms = new ArrayList<String>();
 	/**
 	 * If no data is available, return an empty List
 	 * 
